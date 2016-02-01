@@ -97,8 +97,8 @@ run_analysis <- function(){
         #group by subject and activity and calculate the mean
         meanRslt <- combined %>% group_by(subjectid,activity) %>% summarize_each(funs(mean))
         #write out result files
-        write.csv(combined,"./UCI HAR Dataset/combinedResults.csv")
-        write.csv(meanRslt,"./UCI HAR Dataset/combinedResults_mean.csv")
+        write.table(combined,"./UCI HAR Dataset/combinedResults.txt")
+        write.table(meanRslt,"./UCI HAR Dataset/combinedResults_mean.txt")
        
         
 }

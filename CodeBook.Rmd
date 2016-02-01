@@ -47,7 +47,7 @@ Update the activity column in the dataframe combined using the lookupActivity ve
 
 Use the dataframe combined to create a new dataframe named meanRslt that is grouped by subjectid and activity, and summarizes the observations calculating the mean value. This will result in a single observation for each subjectid and activity pair with the mean calculation for each variable.
 
-Write the dataframe combined to the file combinedResults.csv
-Write the dataframe meanRslt to the file combinedResults_mean.csv
+Write the dataframe combined to the file combinedResults.txt
+Write the dataframe meanRslt to the file combinedResults_mean.txt
 
 

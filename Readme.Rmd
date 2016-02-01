@@ -11,10 +11,10 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 run_analysis.R script combines the mean and standard devation observations 
 from test and train datasets,removing the duplicate rows, and adding the subjectIDs 
-and the Activities and produces an output file named combinedResults.csv.  
+and the Activities and produces an output file named combinedResults.txt.  
 
 The dataset written to combinedResults.csv is used to produce a new dataset
 grouped by SubjectID and Activity, and calculates the mean for the observations.
-The new dataset is then written to the file combinedResults_mean.csv.
+The new dataset is then written to the file combinedResults_mean.txt.
 
 See the CodeBook.Rmd file for details of run_analysis.R.
