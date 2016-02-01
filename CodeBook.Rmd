@@ -1,0 +1,53 @@
+---
+title: "CodeBook"
+author: "Jaret Langston"
+date: "January 31, 2016"
+output: html_document
+---
+
+Script files: run_analysis.R
+Source data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+Update the script to change to the correct working directory where the source data zip file has been extracted.
+Script assumes the source data has been extracted to "UCI HAR Dataset" in the script working directory.
+
+Read ./UCI HAR Dataset/activity_labels.txt into the dataframe variable activitylabels. Activitylabels is a listing of 
+activity id to activity name pairs.
+
+Read ./UCI HAR Dataset/test/X_test.txt into the dataframe variable xtest. xtest is the observations for specific 
+activities for specific subjects.
+Read ./UCI HAR Dataset/test/y_test.txt into the dataframe variable ytest. ytest is the listing of activities in order
+for each observation record in xtest.
+Read ./UCI HAR Dataset/test/subject_test.txt into dataframe variable subjecttest. subjecttest is the listing of subjects in order for each observation record in xtest.
+
+
+Read ./UCI HAR Dataset/train/X_train.txt into the dataframe variable xtrain. xtrain is the observations for specific 
+activities for specific subjects.
+Read ./UCI HAR Dataset/train/y_train.txt into the dataframe variable ytrain. ytrain is the listing of activities in order
+for each observation record in xtrain.
+Read ./UCI HAR Dataset/train/subject_train.txt into dataframe variable subjecttrain. subjecttrain is the listing of subjects in order for each observation record in xtrain.
+
+Combine the xtest, ytest, and subjecttest dataframes into a new dataframe named test. 
+First, read only the variables from xtest that are either mean or standard deviation related into the test dataframe.
+Second, prepend the ytest column of activity ids to the beginning of the test dataframe in column named activity.
+Third, prepend the subjecttest column of subject ids to the beginning of the test dataframe in column named subjectid.
+
+Combine the xtrain, ytrain, and subjecttrain dataframes into a new dataframe named train. 
+First, read only the variables from xtrain that are either mean or standard deviation related into the train dataframe.
+Second, prepend the ytrain column of activity ids to the beginning of the train dataframe in column named activity.
+Third, prepend the subjecttrain column of subject ids to the beginning of the train dataframe in column named subjectid.
+
+Search for duplicate rows of train in test and save the result into the variable duprows.
+Combine train and test, excluding duplicate rows, into the dataframe named combined.
+
+Rename all the columns after subjectid and activity in the dataframe combined to more descriptive names.
+
+Create a lookup vector for activity from the dataframe activitylabels named lookupActivity.
+Update the activity column in the dataframe combined using the lookupActivity vector to replace the activity id with the activity name text.
+
+Use the dataframe combined to create a new dataframe named meanRslt that is grouped by subjectid and activity, and summarizes the observations calculating the mean value. This will result in a single observation for each subjectid and activity pair with the mean calculation for each variable.
+
+Write the dataframe combined to the file combinedResults.csv
+Write the dataframe meanRslt to the file combinedResults_mean.csv
+
+

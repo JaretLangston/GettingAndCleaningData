@@ -1,0 +1,20 @@
+---
+title: "Readme"
+author: "Jaret Langston"
+date: "January 31, 2016"
+output: html_document
+---
+
+See the Readme.txt file for details about the source files in the 
+Human Activity Recognition Using Smartphones Dataset. 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+run_analysis.R script combines the mean and standard devation observations 
+from test and train datasets,removing the duplicate rows, and adding the subjectIDs 
+and the Activities and produces an output file named combinedResults.csv.  
+
+The dataset written to combinedResults.csv is used to produce a new dataset
+grouped by SubjectID and Activity, and calculates the mean for the observations.
+The new dataset is then written to the file combinedResults_mean.csv.
+
+See the CodeBook.Rmd file for details of run_analysis.R.
